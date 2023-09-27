@@ -1,0 +1,72 @@
+﻿<Window x:Class="WpfApp_CPTest_II.AppWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_CPTest_II.AppWindows"
+        mc:Ignorable="d"
+        Title="Главное Меню" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21" />
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="12"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="LightGray"/>
+        <Rectangle Grid.Row="1" Fill="WhiteSmoke"/>
+        <Rectangle Grid.Row="3" Fill="LightGray"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="0">
+                <Button x:Name="ButtonOpenedCompanies" Width="150"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Content="Открытые компании" FontSize="15" Margin="3"
+                Click="ButtonOpenedCompanies_Click" Height="44"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="1">
+                <Button x:Name="ButtonClosedCompanies" Width="150" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Content="Закрытые компании" FontSize="15" Margin="3"
+                Click="ButtonClosedCompanies_Click" Height="44"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="2">
+                <Button x:Name="ButtonTestData" Width="150" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Content="Тест таблицы" FontSize="15" Margin="3"
+                Click="ButtonTestData_Click" Height="44"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="3">
+                <Button x:Name="ButtonClearData" Width="150" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Content="Отчистить Таблицу" FontSize="15" Margin="3"
+                Click="ButtonClearData_Click" Height="44"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="4">
+                <Button x:Name="ButtonQuitDB" Width="150" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Content="Выход из БД" FontSize="15" Margin="3"
+                Click="ButtonQuitDB_Click" Height="44"/>
+            </Viewbox>
+        </Grid>
+        <DataGrid Grid.Row="2" x:Name="DataGridMainMenu"
+                  AutoGenerateColumns="False"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"/>
+
+
+    </Grid>
+</Window>
